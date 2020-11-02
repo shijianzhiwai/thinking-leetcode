@@ -39,6 +39,8 @@ func trap(height []int) int {
     for left < right {
         if height[left] < height[right] {
             if leftMax <= height[left] {
+                // 这个时候之所以把大赋值，切不计算存水，是因为，一旦比之前的大，那么之前的那个是存不住水的
+                // 只有往后遍历水是少的，才会存的住水
                 leftMax = height[left]
             } else {
                 trap += leftMax-height[left]
