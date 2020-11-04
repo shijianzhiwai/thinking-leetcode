@@ -1,3 +1,5 @@
 package maximal_rectangle
 
-fun
+func main()  {
+
+}
