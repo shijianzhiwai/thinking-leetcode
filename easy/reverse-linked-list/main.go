@@ -53,6 +53,8 @@ func reverseList1(head *ListNode) *ListNode {
 }
 
 // 最简单方法，数组方式
+// 空间复杂度 O(n)
+// 但是速度会很快不知道为啥
 func reverseList(head *ListNode) *ListNode {
     var s []int
     for {

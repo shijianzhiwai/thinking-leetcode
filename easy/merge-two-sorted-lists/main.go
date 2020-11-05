@@ -2,6 +2,8 @@ package main
 
 import "shijianzhiwai/thinking-leetcode/lib"
 
+// https://leetcode-cn.com/problems/merge-two-sorted-lists/
+
 var l1 *lib.ListNode
 var l2 *lib.ListNode
 
