@@ -39,6 +39,15 @@ func main() {
 	for _, r := range resp {
 		lib.PrintTree(r)
 	}
+	fmt.Println("count", count(testData))
+
+	fmt.Println("======")
+	traverse1(testData)
+	fmt.Println("======")
+	traverse2(testData)
+	fmt.Println("======")
+	traverse3(testData)
+	fmt.Println("======")
 }
 
 func findDuplicateSubtrees(root *lib.TreeNode) []*lib.TreeNode {
@@ -68,4 +77,42 @@ func traverse(root *lib.TreeNode) string {
 		mapData[str] = c
 	}
 	return str
+}
+
+func count(root *lib.TreeNode) int {
+	if root == nil {
+		return 0
+	}
+
+	left := count(root.Left)
+	right := count(root.Right)
+
+	return left + right + 1
+}
+
+func traverse1(root *lib.TreeNode) {
+	if root == nil {
+		return
+	}
+	fmt.Println(root.Val)
+	traverse1(root.Left)
+	traverse1(root.Right)
+}
+
+func traverse2(root *lib.TreeNode) {
+	if root == nil {
+		return
+	}
+	traverse2(root.Left)
+	fmt.Println(root.Val)
+	traverse2(root.Right)
+}
+
+func traverse3(root *lib.TreeNode) {
+	if root == nil {
+		return
+	}
+	traverse3(root.Left)
+	traverse3(root.Right)
+	fmt.Println(root.Val)
 }
