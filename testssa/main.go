@@ -3,13 +3,12 @@ package main
 import "time"
 
 func main() {
-	var i = 4444
+	var i = 1
 	go func() {
 		time.Sleep(1*time.Second)
 		println(i)
 	}()
-	i = 3333
+	i = 2
 	for  {
-
 	}
 }
